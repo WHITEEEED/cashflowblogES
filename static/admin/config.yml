@@ -1,30 +1,19 @@
-
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  repo: WHITEEEED/cashflowblog2 # замени на свой репозиторий
   branch: main
-  # Для локальной отладки можно добавить:
-  # local_backend: true
+  base_url: https://decap-auth-proxy.lavrinenko-george.workers.dev
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
-publish_mode: editorial_workflow
-
-i18n:
-  structure: multiple_folders
-  locales: [ru, en, es]
-  default_locale: ru
-
 collections:
-  - name: "news"
-    label: "Новости"
-    folder: "content/ru/news"
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
     create: true
     slug: "{{slug}}"
-    i18n: duplicate
     fields:
-      - { label: "Title", name: "title", widget: "string", i18n: true }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Body", name: "body", widget: "markdown", i18n: true }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
