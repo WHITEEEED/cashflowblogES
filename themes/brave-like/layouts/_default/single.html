@@ -1,0 +1,24 @@
+
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <div class="meta">
+    <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+    {{ with .Params.tags }}
+      — <span>Tags: {{ delimit . ", " }}</span>
+    {{ end }}
+  </div>
+  <div class="content">
+    {{ .Content }}
+  </div>
+  <hr>
+  <div class="translations">
+    <strong>Другие языки / Other languages:</strong>
+    <ul>
+      {{ range .Translations }}
+        <li><a href="{{ .RelPermalink }}">{{ .Site.Language.LanguageName }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,41 @@
+
+baseURL = "/"
+title = "CashFlow Blog"
+theme = "brave-like"
+defaultContentLanguage = "ru"
+enableRobotsTXT = true
+paginate = 10
+
+[params]
+  description = "Многоязычный фин-блог: крипта, акции, аналитика"
+  author = "CashFlow Team"
+
+[outputs]
+  home = ["HTML","RSS"]
+  section = ["HTML","RSS"]
+
+[languages]
+  [languages.ru]
+    languageName = "Русский"
+    weight = 1
+    contentDir = "content/ru"
+  [languages.en]
+    languageName = "English"
+    weight = 2
+    contentDir = "content/en"
+  [languages.es]
+    languageName = "Español"
+    weight = 3
+    contentDir = "content/es"
+
+[menu]
+  [[menu.main]]
+    identifier = "news"
+    name = "Новости"
+    url = "/news/"
+    weight = 1
+  [[menu.main]]
+    identifier = "guides"
+    name = "Гайды"
+    url = "/guides/"
+    weight = 2

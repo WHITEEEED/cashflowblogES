@@ -1,0 +1,17 @@
+
+<header>
+  <div class="brand"><a href="{{ .Site.Home.RelPermalink }}"><span class="mark"></span> {{ .Site.Title }}</a></div>
+  <nav>
+    {{ $current := . }}
+    <ul>
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+  <div class="langs">
+    {{ range .AllTranslations }}
+      <a href="{{ .Permalink }}">{{ .Lang }}</a>
+    {{ end }}
+  </div>
+</header>
